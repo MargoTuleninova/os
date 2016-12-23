@@ -78,6 +78,8 @@ idt_init(void)
 	extern void mchk_entry();
 	extern void simderr_entry();
 
+	extern void syscall_entry();
+
 	SETGATE(idt[T_DIVIDE], 0, GD_KT, divzero_entry, 0);
 	SETGATE(idt[T_DEBUG], 0, GD_KT, debug_entry, 0);
 	SETGATE(idt[T_NMI], 0, GD_KT, nmi_entry, 0);
